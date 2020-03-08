@@ -12,3 +12,6 @@ server.get('/',function(req, res){
 });
 
 // Launch Server
+server.listen(8080, function(){
+  console.log('Server ok')
+})
