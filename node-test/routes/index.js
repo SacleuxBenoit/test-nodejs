@@ -9,4 +9,6 @@ exports.router = (function(){
 // Users Routes
 router.route('/users/register/').post(usersControllers.register);
 router.route('/users/login/').post(usersControllers.login);
-});
+
+return router;
+})();
