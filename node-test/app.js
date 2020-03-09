@@ -1,8 +1,11 @@
 // Imports
 const express = require('express');
+const bodyParser = require('body-parser');
 
 // Instantiate Server
 const server = express();
+
+// Body Parser configuration
 
 // Configures routes
 
