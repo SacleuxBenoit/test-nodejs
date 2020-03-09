@@ -6,6 +6,8 @@ const bodyParser = require('body-parser');
 const server = express();
 
 // Body Parser configuration
+server.use(bodyParser.urlencoded({extended:true}));
+server.use(bodyParser.json());
 
 // Configures routes
 
