@@ -1,7 +1,6 @@
 // Imports
 const express = require('express');
 const usersControllers = require('../controllers/users');
-const apiRouter = require("../routes/index").route;
 
 // Router
 exports.router = (function(){
