@@ -1,6 +1,7 @@
 // Imports
 const express = require('express');
 const bodyParser = require('body-parser');
+const apiRouter = require('./routes/index').router;
 
 // Instantiate Server
 const server = express();
