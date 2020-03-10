@@ -17,6 +17,8 @@ server.get('/',function(req, res){
   res.status(200).send('<h1>TEST</h1>')
 });
 
+server.use('/api/', apiRouter);
+
 // Launch Server
 server.listen(8080, function(){
   console.log('Server ok')
