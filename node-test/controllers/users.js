@@ -58,6 +58,21 @@ module.exports = {
             where:{email:email}
         })
         .then(function(userFound){
+            if(userFound){
+                bcrypt.password(password, userFound.password, function(errBcrypt, resBcrypt){
+                    if(resBcrypt){
+                        return res.status(200).json({
+                            'userId': newUser.id,
+                            'token': 'THE TOKEN'
+                        });
+                    }else{
+                        return res.status(403).json({'error':'invalid password'});
+                    }
+                });
+
+            }else{
+                return res.status(404).json({'error':'user not exist in DB'});
+            }
 
         })
         .catch(function(err){
