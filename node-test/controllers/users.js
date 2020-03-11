@@ -11,7 +11,7 @@ module.exports = {
         const username = req.body.username;
         const password = req.body.password;
 
-        if (email == null || username == null|| password ==nul){
+        if (email == null || username == null|| password == null){
             return res.status(400).json({'error':'missing parameters'});
         }
         models.User.findOne({
