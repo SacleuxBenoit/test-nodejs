@@ -14,6 +14,16 @@ module.exports = {
         if (email == null || username == null|| password ==nul){
             return res.status(400).json({'error':'missing parameters'});
         }
+        models.User.findOne({
+            attributes: ['email'],
+            where: {email:email}
+        })
+        .then(function(userFound){
+
+        })
+        .catch(function(err){
+
+        });
     },
 
 
