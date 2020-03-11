@@ -19,10 +19,29 @@ module.exports = {
             where: {email:email}
         })
         .then(function(userFound){
+            if(!userFound){
+                bcrypt.hash(password, 5,function(err,bcryptedPassword){
+                    const newUser = models.User.create({
+                        email:email,
+                        username:username,
+                        password:bcryptedPassword
+                    })
+                    .then(function(newUser){
+                        return res.status(201).json({
+                            'userId': newUser.id
+                        })
+                    })
+                    .catch(function(err){
+                        return res.status(500).json({'err':'cannot add user'});
+                    });
+                });
 
+            }else{
+                return res.status(409).json({'error':'user already exist'});
+            }
         })
         .catch(function(err){
-
+            return res.status(500).json({'error':'unable to verify user'});
         });
     },
 
