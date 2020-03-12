@@ -62,8 +62,8 @@ module.exports = {
                 bcrypt.password(password, userFound.password, function(errBcrypt, resBcrypt){
                     if(resBcrypt){
                         return res.status(200).json({
-                            'userId': newUser.id,
-                            'token': 'THE TOKEN'
+                            'userId': userFound.id,
+                            'token': jwtUtils.generateTokenForUser(userFound)
                         });
                     }else{
                         return res.status(403).json({'error':'invalid password'});
