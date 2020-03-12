@@ -45,7 +45,6 @@ module.exports = {
         });
     },
 
-
     login: function(req, res){
         const email = req.body.email;
         const password = req.body.password
@@ -69,11 +68,9 @@ module.exports = {
                         return res.status(403).json({'error':'invalid password'});
                     }
                 });
-
             }else{
                 return res.status(404).json({'error':'user not exist in DB'});
             }
-
         })
         .catch(function(err){
             return res.status(500).json({'error':'unable to verify user'});
