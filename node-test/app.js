@@ -21,5 +21,5 @@ server.use('/api/', apiRouter);
 
 // Launch Server
 server.listen(8080, function(){
-  console.log('Server ok')
+  console.log('Server en écoute sur : http://localhost:8080')
 })
