@@ -8,6 +8,10 @@ const {
     deleteContact 
 } = require('../controllers/contactControllers');
 
+// this code works too, because it's same route
+// router.route("/").get(getContacts).post(createContact)
+// router.route("/:id").get(getContact).put(updateContact).delete(deleteContact)
+
 router.route("/").get(getContacts)
 
 router.route("/").post(createContact)
